@@ -18,6 +18,7 @@ public class Structural_Facade {
         System.out.println(hisAccount.getAccountNumber());
         myAccount.transfer(hisAccount, 20000);
         System.out.println(hisAccount.getAccountAmount());
+        
 
     }
 
