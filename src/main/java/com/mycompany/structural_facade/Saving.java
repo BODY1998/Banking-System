@@ -18,25 +18,27 @@ public class Saving implements Account {
         this.accountNumber = accountNumber;
     }
 
-    public int getAccountAmount() {
-        return this.savingAmount;
-    }
-
     public void deposit(int amount) {
-        System.out.println("The amount : " + amount + " has been deposited successfully");
         this.savingAmount = amount + savingAmount;
+        System.out.println("The amount : " + amount + " has been deposited successfully");
 
     }
 
     public void withdraw(int amount) {
+        this.savingAmount = savingAmount - amount;
         System.out.println("The amount : " + amount + " has been deposited successfully");
 
     }
 
     public void transfer(Account account, int amount) {
-        System.out.println("The amount : " + amount + " has been deposited successfully");
         account.deposit(amount);
+        this.savingAmount = savingAmount - amount;
+        System.out.println("The amount : " + amount + " has been deposited successfully");
 
+    }
+
+    public int getAccountAmount() {
+        return this.savingAmount;
     }
 
     public int getAccountNumber() {

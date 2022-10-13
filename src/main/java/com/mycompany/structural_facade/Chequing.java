@@ -18,24 +18,27 @@ public class Chequing implements Account {
         this.accountNumber = accountNumber;
     }
 
-    public int getAccountAmount() {
-        return this.chequingAmount;
-    }
-
     public void deposit(int amount) {
-        System.out.println("The amount : " + amount + " has been deposited successfully");
         this.chequingAmount = amount + chequingAmount;
+        System.out.println("The amount : " + amount + " has been deposited successfully");
+
     }
 
     public void withdraw(int amount) {
+        this.chequingAmount = chequingAmount - amount;
         System.out.println("The amount : " + amount + " has been withdrawn successfully");
 
     }
 
     public void transfer(Account account, int amount) {
-        System.out.println("The amount : " + amount + " has been transfered successfully");
         account.deposit(amount);
-        
+        this.chequingAmount = chequingAmount - amount;
+        System.out.println("The amount : " + amount + " has been transfered successfully");
+
+    }
+
+    public int getAccountAmount() {
+        return this.chequingAmount;
     }
 
     public int getAccountNumber() {

@@ -18,6 +18,10 @@ public class BankService {
         this.bankAccounts = new Hashtable<>();
     }
 
+    public int getBankAccountNumbers() {
+        return bankAccounts.size();
+    }
+
     public Account createNewAccount(String type, int initAmount, int AccountNum) {
         Account newAccount = null;
         switch (type) {

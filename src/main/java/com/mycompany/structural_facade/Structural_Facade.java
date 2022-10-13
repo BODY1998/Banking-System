@@ -12,13 +12,14 @@ public class Structural_Facade {
 
     public static void main(String[] args) {
         BankService myBankService = new BankService();
-        Account myAccount = myBankService.createNewAccount("Chequing", 1000000, 0);
-        System.out.println(myAccount.getAccountAmount());
-        Account hisAccount = myBankService.createNewAccount("Saving", 30000, 1);
-        System.out.println(hisAccount.getAccountNumber());
-        myAccount.transfer(hisAccount, 20000);
-        System.out.println(hisAccount.getAccountAmount());
-        
+        Account Account1 = myBankService.createNewAccount("Chequing", 1000000, 0);
+        System.out.println(Account1.getAccountAmount());
+        Account Account2 = myBankService.createNewAccount("Saving", 30000, 1);
+        System.out.println(Account2.getAccountAmount());
+        Account1.transfer(Account2, 50000);
+        System.out.println(Account2.getAccountAmount());
+        System.out.println(Account1.getAccountAmount());
+        System.out.println(myBankService.getBankAccountNumbers());
 
     }
 
